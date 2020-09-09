@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_192105) do
+ActiveRecord::Schema.define(version: 2020_09_09_204542) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "text"
+    t.string "image"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -20,4 +30,5 @@ ActiveRecord::Schema.define(version: 2020_09_07_192105) do
     t.string "password_digest"
   end
 
+  add_foreign_key "articles", "users"
 end
