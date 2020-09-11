@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  has_one_attached:image
   belongs_to :user
   has_many :vote, foreign_key: 'article_id', dependent: :destroy
   has_many :category, foreign_key: 'article_id'

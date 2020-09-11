@@ -10,14 +10,12 @@
   <%= @article.text %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @article.image %>
-</p>
+<%= image_tag url_for(@article.image) %>
+
 
 <p>
   <strong>User:</strong>
-  <%= @article.user_id %>
+  <%= @article.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
