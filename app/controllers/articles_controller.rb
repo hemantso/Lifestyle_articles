@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   before_action :require_same_user, only: %i[edit update destroy]
   def index
-    @articles = Article.all
+    @article = Article.all
   end
 
   def show; end
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render :edit
-      end
+    end
   end
 
   def destroy
