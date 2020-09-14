@@ -12,7 +12,7 @@ gem 'puma', '~> 4.1'
 # Secure authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 #bootstrap
-gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 #jquery
 gem 'jquery-rails'
