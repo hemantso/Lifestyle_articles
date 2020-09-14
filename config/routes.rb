@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   resources :categories, except: [:destroy]
-  resources :articles
+  resources :articles do 
+    resources :votes
+  end
   root to: "sessions#new"
   get 'signup', to: 'users#new'
   resources :users, except: [:new]

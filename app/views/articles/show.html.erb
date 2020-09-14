@@ -1,20 +1,72 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h2 class="align-center">Title: <%= @article.title %></h2>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="well col-xs-8 col-xs-offset-2">
 
-<%= image_tag url_for(@article.image) %>
+  <% if @article.user %>
+
+  <ul class="listing">
+
+    <div class="row center">
+
+      <div class="col-md-4 col-md-offset-4">
+
+        <li>Created by:</li>
+
+        <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+
+        <li class="article-title">
+
+          <%= link_to @article.user.username, user_path(@article.user) %>
+
+        </li>
+
+        <li><%= image_tag url_for(@article.image) %></li>
 
 
-<p>
-  <strong>User:</strong>
-  <%= @article.user.username %>
-</p>
+      </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    </div>
+
+  </ul>
+
+  <% end %>
+
+  <h4 class="center description"><strong>Description:</strong></h4>
+
+  <hr>
+
+  <%= simple_format(@article.text) %>
+
+  <% if @article.categories.any? %>
+
+  <p>Categories: <%= render @article.categories %></p>
+
+  <% end %>
+  <p><%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <% pre_like = @article.votes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+  <%= button_to 'Unlike', article_vote_path(@article, pre_like), method: :delete %>
+  <% else %>
+  <%= button_to 'Like', article_votes_path(@article), method: :post %>
+  <% end %>
+
+
+  <div class="article-actions">
+
+    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
+
+    <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+
+    <%= link_to "Delete this article", article_path(@article), method: :delete,
+
+data: { confirm: "Are you sure you want to delete the article?"},
+
+class: "btn btn-xs btn-danger" %>
+
+    <% end %>
+
+    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+
+  </div>
+
+</div>

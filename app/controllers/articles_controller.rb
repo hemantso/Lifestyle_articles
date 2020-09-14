@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render :new
-     end
+    end
   end
 
   def update
@@ -49,16 +49,18 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :image, :user_id)
+    params.require(:article).permit(:title, :text, :image, :user_id, category_ids: [] )
   end
 
   def require_same_user
-    if current_user != @article.user
 
-      flash[:danger] = 'You can only edit or delete your own articles'
-
-      redirect_to root_path
-
+    if current_user != @article.user and !current_user.admin?
+    
+    flash[:danger] = "You can only edit or delete your own articles"
+    
+    redirect_to root_path
+    
     end
-  end
+    
+    end
 end

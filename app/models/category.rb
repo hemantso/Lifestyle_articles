@@ -1,7 +1,9 @@
-class Category < ActiveRecord::Base 
-  
+# frozen_string_literal: true
+
+class Category < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 3, maximum: 25 }
-  
+
   validates_uniqueness_of :name
-  
-  end
+  has_many :article_categories
+  has_many :articles, through: :article_categories
+end

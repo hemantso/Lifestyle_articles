@@ -3,7 +3,6 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase }
   has_many :article, foreign_key: 'user_id', dependent: :destroy
-  has_many :vote, foreign_key: 'user_id', dependent: :destroy
   validates :username, presence: true, uniqueness: { case_sensitive: false },
                        length: { minimum: 3, maximum: 25 }
 
@@ -16,4 +15,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
   
                     has_secure_password
+
+                    has_many :votes, dependent: :destroy
+                    has_many :articles, through: :votes
 end

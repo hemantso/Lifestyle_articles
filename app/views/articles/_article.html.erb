@@ -13,8 +13,7 @@
       </div>
 
       <div class="article-image">
-        <%= image_tag url_for(article.image) %>
-      </div>
+        <%= image_tag url_for(article.image) %></div>
 
       <div class="article-body">
 
@@ -32,6 +31,19 @@
 
       </div>
 
+      <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+      <% if article.categories.any? %>
+
+      <p>Categories: <%= render article.categories %></p>
+
+      <% end %>
+      <p><%= article.votes.count %> <%= (article.votes.count) == 1 ? 'Like' : 'Likes'%></p>
+      <% pre_like = article.votes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+      <%= button_to 'Unlike', article_vote_path(article, pre_like), method: :delete %>
+      <% else %>
+      <%= button_to 'Like', article_votes_path(article), method: :post %>
+      <% end %>
       <div class="article-actions">
 
         <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
@@ -43,6 +55,8 @@ data: { confirm: "Are you sure you want to delete the article?"},
 class: "btn btn-xs btn-danger" %>
 
       </div>
+
+      <% end %>
 
     </div>
 
