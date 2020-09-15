@@ -19,7 +19,7 @@ body {
 
 .category-name {
   background: url("https://picsum.photos/id/100/300") no-repeat;
-  height: 80vh;
+  height: 40vh;
   color: white;
   text-decoration: solid;
   text-transform: uppercase;
@@ -50,4 +50,9 @@ body {
 }
 .navbar-nav a:hover {
   color: #f26003cc !important;
+}
+
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 60vh;
 }
