@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :articles do 
     resources :votes
   end
-  root to: "articles#index"
+  root to: "categories#index"
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
   get 'login', to: 'sessions#new'

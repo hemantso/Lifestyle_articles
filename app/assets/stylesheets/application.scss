@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand{
+  padding: 0;
+}
 .navbar-brand img{
   width: 6rem;
   height: 4rem;
@@ -9,6 +16,19 @@
   padding: 0;
 }
 
+.category-name {
+  background: url("https://picsum.photos/id/100/300") no-repeat;
+  height: 80vh;
+  color: white;
+  text-decoration: solid;
+  text-transform: uppercase;
+  margin: 0;  
+  background-size: cover;
+}
+.container-fluid{
+  padding: 0px;
+  margin: 0px;
+}
 .navbar-nav a { 
   color:#968e7f !important;
   text-transform: uppercase;
