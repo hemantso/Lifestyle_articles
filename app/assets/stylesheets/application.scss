@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   margin: 0;
@@ -34,7 +35,19 @@ body {
   text-transform: uppercase;
   font-size: 0.7rem;
 }
+.privacy {
+  color: #f26003cc;
+}
 
+.footer {
+  background-color: #413631fa;
+  color: white;
+}
+
+.footer-icon .brand {
+  color: #f26003cc;
+  padding: 5px;
+}
 .navbar-nav a:hover {
-  color: #ff8700 !important;
+  color: #f26003cc !important;
 }

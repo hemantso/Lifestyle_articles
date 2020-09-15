@@ -1,16 +1,18 @@
-<footer class="footer">
-  <div class="section-container">
-    <div class="footer-content d-flex align-items-center justify-content-between">
-      <div class="nav-brand">
-        <a href="/">
-          <div class="nav-brand brand-footer">
-            <span>LifeStyle!</span>
-          </div>
-        </a>
-      </div>
-      <div class="copyright">
-        <p>Privacy Policy Terms & Conditions <br><span> Copyright &copy; 2020. All rights reserved.</span></p>
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-content d-flex align-items-center justify-content-between">
+        <%= link_to(image_tag( "logo.png"), root_path, class: "navbar-brand img-fluid") %>
+        <div class="copyright d-flex align-items-center mt-2">
+          <small><span class="privacy">Privacy Policy Terms & Conditions Copyright</span> &copy; 2020 All rights reserved</small>
+        </div>
+        <div class="connect d-flex align-items-center">
+          <span>Connect with us : </span>
+          <span class="footer-icon ml-2">
+            <%= link_to fa_icon('facebook', type: :brand ), "#", class: "brand" %>
+            <%= link_to fa_icon('twitter', type: :brand ), "#", class: "brand" %>
+            <%= link_to fa_icon('instagram', type: :brand ), "#", class: "brand" %>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
