@@ -2,66 +2,43 @@
 
 <div class="row">
 
-  <div class="col-xs-8 col-xs-offset-2">
+  <div class="col-sm-12">
 
-    <div class="well well-lg">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><%= link_to article.title, article_path(article) %></h4>
+        <%= image_tag url_for(article.image), class: "card-image" %>
+        <p class="card-text"><%= truncate(article.text, length: 100) %></p>
+        <p class="card-text">
+          Created by: <%= article.user.username if article.user%>,
 
-      <div class="article-title">
+          <%= time_ago_in_words(article.created_at) %> ago,
 
-        <%= link_to article.title, article_path(article) %>
+          last updated: <%= time_ago_in_words(article.updated_at) %> ago
+        </p>
+        <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+        <% if article.categories.any? %>
 
-      </div>
+        <p class="card-category">Categories: <%= render article.categories %></p>
 
-      <div class="article-image">
-        <%= image_tag url_for(article.image) %></div>
-
-      <div class="article-body">
-
-        <%= truncate(article.text, length: 100) %>
-
-        <div class="article-meta-details">
-
-          <small>Created by: <%= article.user.username if article.user%>,
-
-            <%= time_ago_in_words(article.created_at) %> ago,
-
-            last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
-
-        </div>
-
-      </div>
-
-      <% if logged_in? && (current_user == article.user || current_user.admin?) %>
-      <% if article.categories.any? %>
-
-      <p>Categories: <%= render article.categories %></p>
-
-      <% end %>
-      <p><%= article.votes.count %> <%= (article.votes.count) == 1 ? 'Like' : 'Likes'%></p>
-      <% pre_like = article.votes.find { |like| like.user_id == current_user.id} %>
-      <% if pre_like %>
-      <%= button_to 'Unlike', article_vote_path(article, pre_like), method: :delete %>
-      <% else %>
-      <%= button_to 'Like', article_votes_path(article), method: :post %>
-      <% end %>
-      <div class="article-actions">
-
-        <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+        <% end %>
+        <p><%= article.votes.count %> <%= (article.votes.count) == 1 ? 'Like' : 'Likes'%></p>
+        <% pre_like = article.votes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+        <%= button_to 'Unlike', article_vote_path(article, pre_like), method: :delete %>
+        <% else %>
+        <%= button_to 'Like', article_votes_path(article), method: :post %>
+        <% end %>
+        <%= link_to "Edit this article", edit_article_path(article), class: "card-link" %>
 
         <%= link_to "Delete this article", article_path(article), method: :delete,
 
-data: { confirm: "Are you sure you want to delete the article?"},
+            data: { confirm: "Are you sure you want to delete the article?"},
 
-class: "btn btn-xs btn-danger" %>
-
+             class: "card-link" %>
       </div>
-
-      <% end %>
-
     </div>
-
+    <% end %>
   </div>
-
 </div>
-
 <% end %>
