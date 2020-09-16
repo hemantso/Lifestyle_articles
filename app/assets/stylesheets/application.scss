@@ -46,7 +46,25 @@ main {
   color: #f26003cc;
 }
 
+.carousel-caption a{
+  color: #f26003cc;
+  
+}
 
+.category-name {
+  color: #f26003cc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.category-name small{
+  justify-content: end;
+}
+
+.category-name a{
+  color: #f26003cc;
+  padding: 2rem;
+}
 .footer {
   background-color: #413631fa;
   color: white;
