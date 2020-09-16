@@ -34,8 +34,7 @@
     <% @categories.each do |category| %>
     <div class="category col-12 col-sm-6 col-lg-3">
       <div class="category-name">
-        <%= link_to "#{category.name}", category_path(category) %><br><br>
-        <small><%= pluralize(category.articles.count, "article") %></small>
+        <%= link_to "#{category.name}", category_path(category) %>
       </div>
     </div>
     <% end %>

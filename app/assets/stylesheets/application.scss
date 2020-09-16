@@ -4,6 +4,7 @@
 body {
   margin: 0;
   padding: 0;
+  // font-family: Arial, Helvetica,  !important;
 }
 .navbar-brand{
   padding: 0;
@@ -13,18 +14,26 @@ body {
   height: 4rem;
 }
 
-.navbar {
+.navbar { 
   padding: 0;
-}
+  font-family: sans-serif!important;
+  font-weight: 700;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  min-height: 4rem;
+ }
+
 
 .category-name {
   background: url("https://picsum.photos/id/100/300") no-repeat;
   height: 40vh;
-  color: white;
-  text-decoration: solid;
+  text-decoration: underline;
   text-transform: uppercase;
   margin: 0;  
+  font-weight: 700;
   background-size: cover;
+  color: #f26003cc;
+  display: flex;
+  flex-direction: column;
 }
 main {
   position: relative;
@@ -35,7 +44,9 @@ main {
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 2.1rem;
-  margin: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 4rem;
 }
 .navbar-nav a { 
   color:#968e7f !important;
@@ -51,14 +62,8 @@ main {
   
 }
 
-.category-name {
-  color: #f26003cc;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-.category-name small{
-  justify-content: end;
+.btn:hover {
+  cursor: pointer;
 }
 
 .category-name a{
@@ -84,7 +89,7 @@ main {
 
 .carousel-inner .carousel-item img {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
 }
 
 // Article
@@ -216,7 +221,7 @@ main {
   }
 
   .tab {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     padding-bottom: 5px;
     margin: 0 15px 10px 0;
@@ -241,7 +246,7 @@ main {
     position: relative;
 
     .group {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color:#fff ;
       text-transform: uppercase;
 
@@ -264,7 +269,7 @@ main {
 
       .button {
         background: #e25f09;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bolder;
       }
 
@@ -274,12 +279,12 @@ main {
       }
 
       .input {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
 
       label {
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-transform: uppercase;
       }
 
@@ -361,7 +366,7 @@ main {
   transform: translateY(66px);
 
   .divider-item {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
   }
 
