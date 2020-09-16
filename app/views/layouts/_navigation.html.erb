@@ -19,6 +19,7 @@
       <li> <%= link_to "New Category", new_category_path, class: "nav-link" %></li>
       <% end %>
       <% if logged_in? %>
+      <li> <%= link_to "New Article", new_article_path, class: "nav-link" %></li>
       <li><%= link_to 'Profile ', user_path(session[:user_id]), class: "nav-link" %></li>
       <li><%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %></li>
 
