@@ -46,7 +46,7 @@ main {
 .footer {
   background-color: #413631fa;
   color: white;
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -66,6 +66,72 @@ main {
   height: 60vh;
 }
 
+// Article
+.card {
+  height: 45vh;
+}
+
+.card img {
+  height: 82.5%;
+  width: 100%;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-2 {
+  color:black;
+  font-weight: 500;
+  margin: 0.5rem 0 0 1rem;
+}
+.title-1{
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+.title-1:hover {
+  color: #f26003cc;
+}
+.card-category a{
+  color: black;
+  text-transform: uppercase;
+}
+
+.card-category a:hover {
+  color: #f26003cc;
+}
+.card-title {
+  text-transform: uppercase;
+  color: #f26003cc;
+  font-size: medium;
+  text-decoration: underline;
+  
+}
+
+.link {
+ color: black;
+ margin-top: 0.5rem;
+}
+
+.card-link {
+  color: black;
+  font-weight: 600;
+}
+
+.card-link:hover {
+  color: #f26003cc;
+}
+
+.like {
+  color: #f26003cc;
+}
+
+.like input[type=submit] {
+ background-color:#f26003cc ;
+  
+}
+
 // User signup and login
 .signup-login-forms {
   margin: auto;
@@ -81,7 +147,7 @@ main {
 .form-contents {
   width: 100%;
   height: 150vh;
-  padding: 0rem 7rem 8rem 5rem;
+  padding: 1rem 7rem 8rem 5rem;
   background: rgba(78, 67, 60, 0.86);
   display: flex;
   justify-content: space-between;

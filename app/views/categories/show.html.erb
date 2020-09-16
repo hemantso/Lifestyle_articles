@@ -1,19 +1,1 @@
-<h1 class="align-center"><%= "Category: " + @category.name %></h1>
-
-<div class="align-center">
-
-  <% if logged_in? and current_user %>
-
-  <div class=" row">
-
-    <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
-
-  </div>
-
-  <% end %>
-
-
-
-</div>
-
 <%= render 'articles/article', obj: @category_articles %>
