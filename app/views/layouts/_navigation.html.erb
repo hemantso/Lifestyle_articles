@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg  navbar-light fixed-top">
   <%= link_to(image_tag( "logo.png"), root_path, class: "navbar-brand img-fluid") %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -13,6 +13,7 @@
         <%= link_to "#{category.name}", category_path(category), class: "nav-link" %></li>
       </li><br>
       <% end %>
+      <li> <%= link_to "All Articles", articles_path, class: "nav-link" %></li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if logged_in? and current_user.admin? %>

@@ -19,7 +19,7 @@ body {
   font-family: sans-serif!important;
   font-weight: 700;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-  min-height: 4rem;
+  min-height: 2rem;
  }
 
 
@@ -44,9 +44,7 @@ main {
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 2.1rem;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 4rem;
+  margin: 4rem auto 0 auto;
 }
 .navbar-nav a { 
   color:#968e7f !important;
@@ -69,6 +67,9 @@ main {
 .category-name a{
   color: #f26003cc;
   padding: 2rem;
+}
+.navbar .navbar-toggle .icon-bar {
+  background-color:#413631fa;
 }
 .footer {
   background-color: #413631fa;
@@ -149,6 +150,9 @@ main {
   color: #f26003cc;
 }
 
+.navbar-toggler-icon{
+  color: #f26003cc;
+}
 .like {
   color: #f26003cc;
 }
