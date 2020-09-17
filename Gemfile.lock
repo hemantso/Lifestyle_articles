@@ -118,7 +118,7 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    pg (0.21.0)
+    pg (0.18.4)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (4.3.6)
@@ -245,7 +245,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
