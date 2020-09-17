@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   before_save { self.email = email.downcase }
   has_many :article, foreign_key: 'user_id', dependent: :destroy
@@ -13,9 +11,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
 
                     format: { with: VALID_EMAIL_REGEX }
-  
-                    has_secure_password
 
-                    has_many :votes, dependent: :destroy
-                    has_many :articles, through: :votes
+  has_secure_password
+
+  has_many :votes, dependent: :destroy
+  has_many :articles, through: :votes
 end

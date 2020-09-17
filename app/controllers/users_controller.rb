@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :require_same_user, only: %i[edit update]
@@ -52,12 +50,6 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
-
-      flash[:danger] = 'You can only edit your own account'
-
-      redirect_to root_path
-
-    end
+    return flash[:danger] = 'You can only edit your own account' unless current_user != @user
   end
 end

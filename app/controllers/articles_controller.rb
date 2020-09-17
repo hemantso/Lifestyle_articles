@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :require_user, except: %i[index show]
@@ -49,18 +47,12 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :image, :user_id, category_ids: [] )
+    params.require(:article).permit(:title, :text, :image, :user_id, category_ids: [])
   end
 
   def require_same_user
+    return unless (current_user != @article.user) && !current_user.admin?
 
-    if current_user != @article.user and !current_user.admin?
-    
-    flash[:danger] = "You can only edit or delete your own articles"
-    
-    redirect_to root_path
-    
-    end
-    
-    end
+    flash[:danger] = 'You can only edit or delete your own articles'
+  end
 end
