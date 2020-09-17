@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   has_many :vote, foreign_key: 'article_id', dependent: :destroy
   validates :title, presence: true, length: {minimum: 3, maximum: 50}
 
-  validates :text, presence: true, length: {minimum: 10, maximum: 300}
+  validates :text, presence: true, length: {minimum: 10, maximum: 1000}
   validates :image, presence: true
   validates :user_id, presence: true
   has_many :article_categories
