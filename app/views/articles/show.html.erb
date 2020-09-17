@@ -25,12 +25,13 @@
         <p class="card-text">
           Created by: <%= @article.user.username if @article.user%>
         </p>
-        <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
+
         <% if @article.categories.any? %>
 
         <p class="card-category">Category: <%= render @article.categories %></p>
 
         <% end %>
+        <% if logged_in?  %>
         <span class="like"><%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Like' : 'Likes'%>
           <% pre_like = @article.votes.find { |like| like.user_id == current_user.id} %>
           <% if pre_like %>
@@ -39,10 +40,12 @@
           <%= button_to 'Like', article_votes_path(@article), method: :post %>
           <% end %>
         </span>
+        <% end %>
+        <% if logged_in? && current_user == @article.user %>
         <div class="link">
-          <%= link_to "Edit this article", edit_article_path(@article), class: "card-link" %>
+          <%= link_to "Edit", edit_article_path(@article), class: "card-link" %>
 
-          <%= link_to "Delete this article", article_path(@article), method: :delete,
+          <%= link_to "Delete", article_path(@article), method: :delete,
 
             data: { confirm: "Are you sure you want to delete the @article?"},
 

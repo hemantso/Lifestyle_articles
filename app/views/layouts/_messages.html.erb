@@ -1,19 +1,19 @@
-<div class="row ">
+  <div class="row container messages">
 
-  <div class="col-sm-12">
+    <div class="col">
 
-    <% flash.each do |name, msg| %>
+      <% flash.each do |name, msg| %>
 
-    <div class='alert alert-<%="#{name}" %>'>
+      <div class='alert alert-<%="#{name}" %>'>
 
-      <a href="#" class="close" data-dismiss="alert">×</a>
+        <a href="#" class="close" data-dismiss="alert">×</a>
 
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+
+      </div>
+
+      <% end %>
 
     </div>
 
-    <% end %>
-
   </div>
-
-</div>
