@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :require_admin, except: %i[index show]
   def index
     @categories = Category.all
-    @article = Article.all.order(created_at: :desc)
+    @article = Article.all.order(created_at: :desc).includes(:user)
   end
 
   def new
@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @category_articles = @category.articles.order(created_at: :desc)
+    @category_articles = @category.articles.order(created_at: :desc).includes(:user)
   end
 
   def edit
