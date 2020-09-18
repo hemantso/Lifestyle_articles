@@ -46,6 +46,10 @@ This project was built using these technologies.
 ##
 * Live Demo Link --> App Deployed with Heroku: [LifeStyle-Articles](https://evening-spire-40702.herokuapp.com/) :point_left:
 
+## Video presentation
+
+[![Video](app/assets/images/video.png)](https://www.loom.com/share/05a44505c2e545c985706842a62450f5)
+
 ### Getting Started
 
 To get a local copy up and running follow these simple example steps.
