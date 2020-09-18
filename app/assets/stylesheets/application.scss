@@ -4,45 +4,51 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue',
-  sans-serif;
+  font-family:
+    'Segoe UI',
+    'Roboto',
+    'Helvetica Neue',
+    sans-serif;
 }
-.navbar-brand{
+
+.navbar-brand {
   padding: 0;
 }
-.navbar-brand img{
+
+.navbar-brand img {
   width: 6rem;
   height: 4rem;
 }
 
-.navbar { 
+.navbar {
   padding: 0;
-  font-family: sans-serif!important;
+  font-family: sans-serif !important;
   font-weight: 700;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
   min-height: 2rem;
- }
-
+}
 
 .category-name {
   width: 100%;
   height: 40vh;
   text-decoration: underline;
   text-transform: uppercase;
-  margin: 0;  
+  margin: 0;
   font-weight: 700;
   color: #f26003cc;
   display: flex;
   flex-direction: column;
 }
+
 main {
   position: relative;
   min-height: 100vh;
   padding-bottom: 2rem;
 }
-.container-fluid{
-  padding-left: 0px;
-  padding-right: 0px;
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 2.2rem;
   margin: 4rem 0 0 0;
 }
@@ -51,51 +57,61 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
-.navbar-nav a { 
-  color:#968e7f !important;
+
+.card-category a {
+  color: black;
   text-transform: uppercase;
-  font-size: 0.7rem;
 }
+
+.navbar-nav a {
+  color: #968e7f !important;
+  text-transform: uppercase;
+}
+
 .privacy {
   color: #f26003cc;
 }
 
-.carousel-caption a{
+.carousel-caption a {
   color: #f26003cc;
   text-transform: uppercase;
-  font-size: 500;
-  
 }
-
 
 .btn:hover {
   cursor: pointer;
 }
 
-.category-name a{
+.category-name a {
   color: #f26003cc;
   padding: 2rem;
 }
+
 .navbar .navbar-toggle .icon-bar {
-  background-color:#413631fa;
+  background-color: #413631fa;
 }
+
 .footer {
   background-color: #413631fa;
   color: white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 4rem; 
+  height: 4rem;
 }
 
 .footer-icon .brand {
   color: #f26003cc;
   padding: 5px;
 }
+
 .navbar-nav a:hover {
   color: #f26003cc !important;
 }
 
+.card img {
+  height: 50vh;
+  width: 100%;
+}
 
 .carousel-inner .carousel-item img {
   width: 100%;
@@ -107,49 +123,44 @@ main {
   height: 50vh;
 }
 
-.card img {
-  height: 50vh;
-  width: 100%;
-}
-
 .card-body {
   padding: 0;
 }
+
 .panel {
   color: white;
 }
+
 .card-2 {
-  color:black;
+  color: black;
   font-weight: 500;
   margin: 0.5rem 0 0 1rem;
 }
-.title-1{
+
+.title-1 {
   text-decoration: none;
   color: black;
   font-weight: 800;
 }
+
 .title-1:hover {
   color: #f26003cc;
-}
-.card-category a{
-  color: black;
-  text-transform: uppercase;
 }
 
 .card-category a:hover {
   color: #f26003cc;
 }
+
 .card-title {
   text-transform: uppercase;
   color: #f26003cc;
   font-size: medium;
   text-decoration: underline;
-  
 }
 
 .link {
- color: black;
- margin-top: 0.5rem;
+  color: black;
+  margin-top: 0.5rem;
 }
 
 .card-link {
@@ -161,9 +172,10 @@ main {
   color: #f26003cc;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
   color: #f26003cc;
 }
+
 .like {
   color: #f26003cc;
 }
@@ -174,17 +186,16 @@ main {
 }
 
 .like input[type=submit] {
- background-color:#f26003cc ;
-  
+  background-color: #f26003cc;
 }
 
 // User signup and login
 .signup-login-forms {
   margin: auto;
   min-height: 100vh;
-  width: 100%;  
+  width: 100%;
   position: relative;
-  background: asset_url('logo.png') no-repeat center;
+  background: url('logo.png') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -262,7 +273,7 @@ main {
 
     .group {
       margin-bottom: 1rem;
-      color:#fff ;
+      color: #fff;
       text-transform: uppercase;
 
       .label,
@@ -302,7 +313,6 @@ main {
         font-size: 1rem;
         text-transform: uppercase;
       }
-
 
       label .icon {
         width: 15px;
@@ -372,6 +382,7 @@ main {
     text-align: center;
   }
 }
+
 .login-divider {
   position: relative;
   height: 40%;
