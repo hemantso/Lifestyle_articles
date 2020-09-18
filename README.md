@@ -1,12 +1,4 @@
-
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
-
-#LifeStyle Articles
+## LifeStyle Articles
 
   <p class="align-center">
     This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
