@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'User was successfully created.'
       redirect_to articles_path
     else
+      flash[:danger] = 'User was not created'
       render :new
     end
   end
@@ -29,14 +30,17 @@ class UsersController < ApplicationController
       flash[:notice] = 'User was successfully updated'
       redirect_to @user
     else
+      flash[:danger] = 'User was not updated'
       render :edit
     end
   end
 
   def destroy
-    @user.destroy
+    if @user.destroy
     flash[:notice] = 'User was successfully deleted'
     redirect_to users_url
+    else
+      flash[:danger] = 'User was not deleted'
   end
 
   private

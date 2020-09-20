@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
       flash[:success] = 'Article was successfully created'
       redirect_to @article
     else
+      flash[:danger] = 'Article was not created'
       render :new
     end
   end
@@ -30,13 +31,17 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
+      flash[:danger] = 'Article was not updated'
       render :edit
     end
   end
 
   def destroy
-    @article.destroy!
+    if @article.destroy!
     flash[:danger] = 'Article was successfully deleted'
+    else 
+      flash[:danger] = 'Article was not deleted'
+      redirect_to @article
   end
 
   private

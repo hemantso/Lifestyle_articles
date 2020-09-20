@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path
 
     else
-
+      flash[:danger] = 'Category was not created'
       render 'new'
 
     end
@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
       redirect_to category_path(@category)
 
     else
-
+      flash[:danger] = 'Category was not updated'
       render 'edit'
 
     end

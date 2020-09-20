@@ -5,15 +5,17 @@ class VotesController < ApplicationController
     if already_liked?
       flash[:notice] = "You can't like more than once"
     else
+      flash[:success] = 'You successfully voted for an Article'
       @article.votes.create(user_id: current_user.id)
     end
-    redirect_to article_path(@article)
+    redirect_to articles_path
   end
 
   def destroy
     if !already_liked?
-      flash[:notice] = 'Cannot unlike'
+      flash[:notice] = 'Cannot unlike the article'
     else
+      flash[:danger] = 'Successfully unvoted the article'
       @vote.destroy
     end
     redirect_to article_path(@article)
