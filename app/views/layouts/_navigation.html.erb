@@ -8,7 +8,7 @@
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
-      <% Category.all.each do |category| %>
+      <% Category.all.order(created_at: :asc).limit(5).each do |category| %>
       <li class="nav-item">
         <%= link_to "#{category.name}", category_path(category), class: "nav-link" %></li>
       </li><br>

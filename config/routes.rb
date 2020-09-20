@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   resources :categories, except: [:destroy]
   resources :articles  do 
-    resources :votes
+    resources :votes, only[:destroy, :create]
   end
 
 
