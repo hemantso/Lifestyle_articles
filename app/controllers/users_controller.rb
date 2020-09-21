@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     redirect_to users_url
     else
       flash[:danger] = 'User was not deleted'
+    end
   end
 
   private

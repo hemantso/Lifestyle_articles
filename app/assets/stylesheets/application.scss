@@ -1,14 +1,25 @@
-@import "bootstrap";
-@import "font-awesome";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap';
+@import 'font-awesome';
 
 body {
   margin: 0;
   padding: 0;
-  font-family:
-    'Segoe UI',
-    'Roboto',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .navbar-brand {
@@ -24,20 +35,9 @@ body {
   padding: 0;
   font-family: sans-serif !important;
   font-weight: 700;
+  font-size: 0.7rem;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
   min-height: 2rem;
-}
-
-.category-name {
-  width: 100%;
-  height: 40vh;
-  text-decoration: underline;
-  text-transform: uppercase;
-  margin: 0;
-  font-weight: 700;
-  color: #f26003cc;
-  display: flex;
-  flex-direction: column;
 }
 
 main {
@@ -49,18 +49,13 @@ main {
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 2.2rem;
+  padding-bottom: 3rem;
   margin: 4rem 0 0 0;
 }
 
 .messages {
   margin-left: auto;
   margin-right: auto;
-}
-
-.card-category a {
-  color: black;
-  text-transform: uppercase;
 }
 
 .navbar-nav a {
@@ -72,18 +67,8 @@ main {
   color: #f26003cc;
 }
 
-.carousel-caption a {
-  color: #f26003cc;
-  text-transform: uppercase;
-}
-
 .btn:hover {
   cursor: pointer;
-}
-
-.category-name a {
-  color: #f26003cc;
-  padding: 2rem;
 }
 
 .navbar .navbar-toggle .icon-bar {
@@ -106,302 +91,6 @@ main {
 
 .navbar-nav a:hover {
   color: #f26003cc !important;
-}
-
-.card img {
-  height: 50vh;
-  width: 100%;
-}
-
-.carousel-inner .carousel-item img {
-  width: 100%;
-  height: 70vh;
-}
-
-// Article
-.card {
-  height: 50vh;
-}
-
-.card-body {
-  padding: 0;
-}
-
-.panel {
-  color: white;
-}
-
-.card-2 {
-  color: black;
-  font-weight: 500;
-  margin: 0.5rem 0 0 1rem;
-}
-
-.title-1 {
-  text-decoration: none;
-  color: black;
-  font-weight: 800;
-}
-
-.title-1:hover {
-  color: #f26003cc;
-}
-
-.card-category a:hover {
-  color: #f26003cc;
-}
-
-.card-title {
-  text-transform: uppercase;
-  color: #f26003cc;
-  font-size: medium;
-  text-decoration: underline;
-}
-
-.link {
-  color: black;
-  margin-top: 0.5rem;
-}
-
-.card-link {
-  color: black;
-  font-weight: 600;
-}
-
-.card-link:hover {
-  color: #f26003cc;
-}
-
-.navbar-toggler-icon {
-  color: #f26003cc;
-}
-
-.like {
-  color: #f26003cc;
-}
-
-.headline {
-  color: #f26003cc;
-  text-decoration: underline;
-}
-
-.like input[type=submit] {
-  background-color: #f26003cc;
-}
-
-// User signup and login
-.signup-login-forms {
-  margin: auto;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  background: url('logo.png') no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.form-contents {
-  width: 100%;
-  height: 150vh;
-  padding: 1rem 7rem 8rem 5rem;
-  background: rgba(78, 67, 60, 0.86);
-  display: flex;
-  justify-content: space-between;
-}
-
-.login-html,
-.social-media-login {
-  flex-basis: 40%;
-  width: 40%;
-}
-
-.login-html.edit-form {
-  width: 100%;
-  flex-basis: initial;
-}
-
-.login-html {
-  .profile-avatar {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
-
-  .sign-in-form,
-  .sign-up-form {
-    margin-top: 2rem;
-    width: 100%;
-  }
-
-  .sign-in,
-  .sign-up,
-  .group .check {
-    display: none;
-  }
-
-  .tab,
-  .group .label,
-  .group .button {
-    text-transform: uppercase;
-  }
-
-  .tab {
-    font-size: 1rem;
-    font-weight: bold;
-    padding-bottom: 5px;
-    margin: 0 15px 10px 0;
-    display: inline-block;
-    border-bottom: 2px solid transparent;
-    color: #fff;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .sign-in.tab.active,
-  .sign-up.tab.active {
-    color: #e25f09;
-    border-color: #e25f09;
-  }
-
-  .login-form {
-    height: 100%;
-    position: relative;
-
-    .group {
-      margin-bottom: 1rem;
-      color: #fff;
-      text-transform: uppercase;
-
-      .label,
-      .input,
-      .button {
-        width: 100%;
-        color: #fff;
-        display: block;
-      }
-
-      .input,
-      .button {
-        border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
-        background: rgba(255, 255, 255, 0.2);
-        outline: none;
-      }
-
-      .button {
-        background: #e25f09;
-        font-size: 1rem;
-        font-weight: bolder;
-      }
-
-      .edit-button {
-        position: relative;
-        top: 10px;
-      }
-
-      .input {
-        font-size: 1rem;
-      }
-
-      label {
-        color: #fff;
-        font-size: 1rem;
-        text-transform: uppercase;
-      }
-
-      label .icon {
-        width: 15px;
-        height: 15px;
-        border-radius: 2px;
-        position: relative;
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.1);
-
-        &::before,
-        &::after {
-          content: '';
-          width: 10px;
-          height: 2px;
-          background: #fff;
-          position: absolute;
-          transition: all 0.2s ease-in-out 0s;
-        }
-
-        &::before {
-          left: 2px;
-          width: 5px;
-          bottom: 5px;
-          transform: scale(0) rotate(0);
-        }
-
-        &::after {
-          top: 6px;
-          right: 1px;
-          transform: scale(0) rotate(0);
-        }
-      }
-
-      .check:checked + label {
-        color: #fff;
-      }
-
-      .check:checked + label .icon {
-        background: #e25f09;
-      }
-
-      .check:checked + label .icon::before {
-        transform: scale(1) rotate(45deg);
-      }
-
-      .check:checked + label .icon::after {
-        transform: scale(1) rotate(-45deg);
-      }
-    }
-  }
-
-  .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-form {
-    transform: rotate(0);
-  }
-
-  .sign-up:checked + .tab + .login-form .sign-up-form {
-    transform: rotate(0);
-  }
-
-  .hr {
-    height: 2px;
-    margin: 60px 0 50px 0;
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  .foot-lnk {
-    text-align: center;
-  }
-}
-
-.login-divider {
-  position: relative;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateY(66px);
-
-  .divider-item {
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  .start-divider,
-  .end-divider {
-    width: 1px;
-    height: 90px;
-    background: #aaa;
-  }
 }
 
 @media (max-width: 992px) {

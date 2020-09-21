@@ -42,6 +42,7 @@ class ArticlesController < ApplicationController
     else 
       flash[:danger] = 'Article was not deleted'
       redirect_to @article
+    end
   end
 
   private
