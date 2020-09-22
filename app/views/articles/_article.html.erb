@@ -28,7 +28,8 @@
         <p class="card-category">Category: <%= render article.categories %></p>
 
         <% end %>
-        <span class="like"><%= article.votes.count %> <%= (article.votes.count) == 1 ? 'Vote' : 'Votes'%>
+        <span class="like">
+          <%= article.votes.count %> <%= vote(article) %>
           <% pre_like = article.votes.find { |like| like.user_id == current_user.id} %>
           <% if pre_like %>
           <%= button_to 'Unvote', article_vote_path(article, pre_like), method: :delete %>
@@ -38,13 +39,10 @@
         </span>
         <% end %>
         <% if logged_in? && current_user == article.user %>
-        <div class="link">
-          <%= link_to "Edit", edit_article_path(article), class: "card-link" %>
+        <div class="link d-flex inline">
+          <%= link_to "Edit", edit_article_path(article), class: "card-link mr-2 btn btn-danger" %>
 
-          <%= link_to "Delete", article_path(article),
-               method: :delete,
-               data: { confirm: "Are you sure you want to delete the article?"},
-               class: "card-link" %>
+          <%= button_to "Delete", article_path(article), :method => :delete, data: { confirm: "Are you sure you want to delete the article?"}, class: "card-link btn btn-danger" %>
         </div>
         <% end %>
       </div>

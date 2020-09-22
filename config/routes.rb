@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   
   root to: "categories#index"
-  resources :categories, except: [:destroy]
+  resources :categories, except: [:index, :destroy]
   
   resources :articles  do 
     resources :votes, only: [:destroy, :create]

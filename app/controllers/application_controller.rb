@@ -17,4 +17,18 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def require_admin
+    if !logged_in? || (logged_in? and !current_user.admin?)
+      flash[:danger] = 'Only admins can perform that action'
+      redirect_to root_path
+    end
+  end
+
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = 'You can only edit or delete your own articles'
+      redirect_to root_path
+    end
+  end
 end

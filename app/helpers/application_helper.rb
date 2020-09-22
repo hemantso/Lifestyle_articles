@@ -8,4 +8,8 @@ module ApplicationHelper
 
     image_tag(gravatar_url, alt: user.username, class: 'img-circle')
   end
+
+  def vote(article)
+    article.votes.count.zero? ? 'Vote' : 'Votes'
+  end
 end

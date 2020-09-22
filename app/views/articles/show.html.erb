@@ -42,14 +42,14 @@
         </span>
         <% end %>
         <% if logged_in? && current_user == @article.user %>
-        <div class="link">
-          <%= link_to "Edit", edit_article_path(@article), class: "card-link" %>
+        <div class="link d-flex inline ">
+          <%= link_to "Edit", edit_article_path(@article), class: "card-link btn btn-danger mr-2" %>
 
-          <%= link_to "Delete", article_path(@article), method: :delete,
+          <%= button_to "Delete", article_path(@article), method: :delete,
 
             data: { confirm: "Are you sure you want to delete the @article?"},
 
-             class: "card-link" %>
+             class: "card-link btn btn-danger" %>
         </div>
         <% end %>
       </div>

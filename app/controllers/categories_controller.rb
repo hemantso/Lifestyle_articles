@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :require_admin, except: %i[index show]
   def index
     @categories = Category.all
-    @article = Article.all.order(created_at: :desc).includes(:user)
+    @article = Article.all.order(created_at: :desc)
   end
 
   def new
@@ -21,13 +21,13 @@ class CategoriesController < ApplicationController
     else
       flash[:danger] = 'Category was not created'
       render 'new'
-
+      redirect_to root_path
     end
   end
 
   def show
     @category = Category.find(params[:id])
-    @category_articles = @category.articles.order(created_at: :desc).includes(:user)
+    @category_articles = @category.articles.order(created_at: :desc)
   end
 
   def edit
@@ -54,12 +54,5 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
-  end
-
-  def require_admin
-    if !logged_in? || (logged_in? and !current_user.admin?)
-      flash[:danger] = 'Only admins can perform that action'
-      redirect_to root_path
-    end
   end
 end
