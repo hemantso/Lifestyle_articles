@@ -3,7 +3,7 @@
     <div class="login-html">
       <div class="login-form">
         <div class="sign-up-form">
-          <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+          <%= form_with(model: article, local: true, :html => {class: "form-horizontal", role: "form"}) do |f| %>
           <%= render 'shared/errors', obj: @article %>
           <h3 class="headline">New Article</h3>
           <div class="group">

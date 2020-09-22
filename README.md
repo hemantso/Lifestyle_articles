@@ -81,7 +81,6 @@ Setup database with:
 
 ```
 $ rails db:migrate
-$ rails db:seed
 ```
 
 ### Usage

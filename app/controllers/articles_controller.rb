@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   before_action :require_user, except: %i[index show]
-
   before_action :require_same_user, only: %i[edit update destroy]
   def index
     @article = Article.all
@@ -38,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     if @article.destroy!
-    flash[:danger] = 'Article was successfully deleted'
+      flash[:danger] = 'Article was successfully deleted'
     else 
       flash[:danger] = 'Article was not deleted'
       redirect_to @article

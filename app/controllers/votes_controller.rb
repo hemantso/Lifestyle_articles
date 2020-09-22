@@ -18,7 +18,7 @@ class VotesController < ApplicationController
       flash[:danger] = 'Successfully unvoted the article'
       @vote.destroy
     end
-    redirect_to article_path(@article)
+    redirect_to articles_path
   end
 
   private

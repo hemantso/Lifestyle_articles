@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
-  before_action :require_same_user, only: %i[edit update]
   def index
     @users = User.all
   end
@@ -37,8 +36,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-    flash[:notice] = 'User was successfully deleted'
-    redirect_to users_url
+      session[params[:id]] = nil
+      flash[:notice] = 'User was successfully deleted'
+      redirect_to users_url
     else
       flash[:danger] = 'User was not deleted'
     end
@@ -52,9 +52,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
-  end
-
-  def require_same_user
-    return flash[:danger] = 'You can only edit your own account' unless current_user != @user
   end
 end
