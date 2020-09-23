@@ -1,0 +1,58 @@
+<div class="card float-right" style="width: 15rem">
+  <%= gravatar_for @article.user, size: 100 , class: "card-img-top"%>
+  <div class=" card-body ml-1 mt-4 mb-1">
+    <h4 class="card-title">Username:-<%= @article.user.username %></h4>
+    <%= link_to 'Edit', edit_user_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<h4 class="card-title text-center">
+  <%= @article.user.username %>'s Article:-</h4>
+
+<div class="row articles no-gutters">
+  <div class="col-sm-6 col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <%= image_tag url_for(@article.image), class: "card-image" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="card">
+      <div class="card-body card-2">
+        <h4 class="card-title"><%= link_to @article.title, article_path(@article), class: "title-1" %></h4>
+
+        <p class="card-text"><%= truncate(@article.text, length: 30) %></p>
+        <p class="card-text">
+          Created by: <%= @article.user.username if @article.user%>
+        </p>
+
+        <% if @article.categories.any? %>
+
+        <p class="card-category">Category: <%= render @article.categories %></p>
+
+        <% end %>
+        <% if logged_in?  %>
+        <span class="like"><%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%>
+          <% pre_like = @article.votes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+          <%= button_to 'Unvote', article_vote_path(@article, pre_like), method: :delete %>
+          <% else %>
+          <%= button_to 'Vote', article_votes_path(@article), method: :post %>
+          <% end %>
+        </span>
+        <% end %>
+        <% if logged_in? && current_user == @article.user %>
+        <div class="link d-flex inline ">
+          <%= link_to "Edit", edit_article_path(@article), class: "card-link btn btn-danger mr-2" %>
+
+          <%= button_to "Delete", article_path(@article), method: :delete,
+
+            data: { confirm: "Are you sure you want to delete the @article?"},
+
+             class: "card-link btn btn-danger" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
