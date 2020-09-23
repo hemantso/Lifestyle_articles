@@ -35,6 +35,7 @@
 
 /public/packs
 /public/packs-test
+/config/cloudinary.yml
 /node_modules
 /yarn-error.log
 yarn-debug.log*

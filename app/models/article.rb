@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
   has_one_attached :image
-  
   belongs_to :user
   has_many :vote, foreign_key: 'article_id', dependent: :destroy
   validates :title, presence: true, length: { minimum: 3, maximum: 50 }
