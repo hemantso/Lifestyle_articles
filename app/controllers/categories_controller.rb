@@ -16,12 +16,11 @@ class CategoriesController < ApplicationController
 
       flash[:success] = 'Category was created successfully'
 
-      redirect_to categories_path
+      redirect_to root_path
 
     else
       flash[:danger] = 'Category was not created'
       render 'new'
-      redirect_to root_path
     end
   end
 

@@ -16,7 +16,9 @@ gem 'puma', '~> 4.1'
 # Secure authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'bootstrap', '~> 4.0'
-
+# media files
+gem 'carrierwave'
+gem 'cloudinary'
 # jquery
 gem 'jquery-rails'
 # Use SCSS for stylesheets
