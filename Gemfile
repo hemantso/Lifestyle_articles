@@ -15,8 +15,8 @@ end
 gem 'puma', '~> 4.1'
 # Secure authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'bootstrap', '~> 4.0'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # jquery
 gem 'jquery-rails'
 # Use SCSS for stylesheets

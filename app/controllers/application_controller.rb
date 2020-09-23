@@ -8,27 +8,18 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    !current_user.nil?
   end
 
   def require_user
-    if !logged_in?
-      flash[:danger] = 'You must be logged in to perform that action'
-      redirect_to root_path
-    end
+    return flash[:danger] = 'You must be logged in to perform that action' unless logged_in?
   end
 
   def require_admin
-    if !logged_in? || (logged_in? and !current_user.admin?)
-      flash[:danger] = 'Only admins can perform that action'
-      redirect_to root_path
-    end
+    flash[:danger] = 'Only admins can perform that action' if !logged_in? || (logged_in? and !current_user.admin?)
   end
 
   def require_same_user
-    if current_user != @article.user
-      flash[:danger] = 'You can only edit or delete your own articles'
-      redirect_to root_path
-    end
+    return flash[:danger] = 'You can only edit or delete your own articles' unless current_user == @article.user
   end
 end
