@@ -1,0 +1,39 @@
+<div id=" demo" class="carousel slide" data-ride="carousel">
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+
+
+  <div class="carousel-inner">
+    <% @article.each_with_index do |article, index| %>
+    <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+      <%= image_tag url_for(article.image) %>
+      <div class="carousel-caption">
+        <h3><%= link_to article.title, article_path(article) %></h3>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon "></span>
+  </a>
+
+</div>
+
+<div class="row no-gutters">
+  <% @categories.each do |category| %>
+  <div class="category col-12 col-sm-6 col-lg-3">
+    <div class="category-name" style="background: url(' https://picsum.photos/id/40<%= category.id %>/300') no-repeat; background-size: cover;">
+      <%= link_to "#{category.name}", category_path(category) %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<% @users.each do |user| %>
+<div class="card float-left" style="width: 15rem">
+  <%= gravatar_for user, size: 100 , class: "card-img-top"%>
+  <div class=" card-body ml-1 mt-4 mb-1">
+    <h4 class="card-title">Username:-<%= link_to user.username, user_path(user)%></h4>
+
+    <% if logged_in? and current_user.admin? %>
+
+    <%= link_to "Delete this user", user_path(user),class: "btn btn-danger", method: :delete,
+
+data: { confirm: "Are you sure you want to delete the user and all their articles?" } %>
+
+    <% end %>
+
+  </div>
+
+</div>
+<% end %>

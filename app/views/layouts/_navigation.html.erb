@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg  navbar-light fixed-top">
+  <%= link_to(image_tag( "logo.png"), root_path, class: "navbar-brand img-fluid") %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <% Category.all.order(created_at: :asc).limit(5).each do |category| %>
+      <li class="nav-item">
+        <%= link_to "#{category.name}", category_path(category), class: "nav-link" %></li>
+      </li><br>
+      <% end %>
+      <li> <%= link_to "All Articles", articles_path, class: "nav-link" %></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <% if logged_in? and current_user.admin? %>
+      <li> <%= link_to "New Category", new_category_path, class: "nav-link" %></li>
+      <% end %>
+      <% if logged_in? %>
+      <li> <%= link_to "New Article", new_article_path, class: "nav-link" %></li>
+      <li><%= link_to 'Profile ', user_path(session[:user_id]), class: "nav-link" %></li>
+      <li><%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %></li>
+
+      <% else %>
+
+      <li> <%= link_to 'Login', login_path , class: "nav-link"%></li>
+
+      <li> <%= link_to 'register', signup_path, class: "nav-link" %></li>
+
+      <% end %>
+    </ul>
+
+  </div>
+
+
+</nav>

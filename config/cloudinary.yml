@@ -1,0 +1,18 @@
+development:
+  cloud_name: dkdixwfwd
+  api_key: '476551712198719'
+  api_secret: UJZiFy-SHso89to4GIT9T6tT8Fs
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dkdixwfwd
+  api_key: '476551712198719'
+  api_secret: UJZiFy-SHso89to4GIT9T6tT8Fs
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dkdixwfwd
+  api_key: '476551712198719'
+  api_secret: UJZiFy-SHso89to4GIT9T6tT8Fs
+  enhance_image_tag: true
+  static_file_support: false

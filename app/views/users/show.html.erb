@@ -1,0 +1,10 @@
+<div class="card float-right" style="width: 15rem">
+  <%= gravatar_for @user, size: 100 , class: "card-img-top"%>
+  <div class=" card-body ml-1 mt-4 mb-1">
+    <h4 class="card-title">Username:-<%= @user.username %></h4>
+    <%= link_to 'Edit', edit_user_path, class: "btn btn-primary" %>
+  </div>
+</div><br>
+<h4 class="card-title text-center">
+  <%= @user.username %>'s Articles:-</h4>
+<%= render 'articles/article', obj: @user.article %>
